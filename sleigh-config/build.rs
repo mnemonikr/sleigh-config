@@ -6,7 +6,6 @@ use std::path::Path;
 use heck::ToSnakeCase;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    // TODO Should be based on Ghidra release versions
     let out_dir = std::env::var("OUT_DIR")?;
     let mut config_vars_file = File::create(Path::new(&out_dir).join("config_vars.rs"))?;
 
