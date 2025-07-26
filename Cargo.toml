@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "sleigh-config",
+
+    # Internal
+    "tests",
+]
+resolver = "3"
