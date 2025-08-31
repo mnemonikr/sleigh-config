@@ -5,12 +5,6 @@ This crate contains precompiled `.sla` and `.pspec` configuration files for use 
 [Ghidra](https://github.com/NationalSecurityAgency/ghidra) decompiler. The configuration files are
 sourced from Ghidra version **11.4**.
 
-The configuration file contents are placed in variables based on their respective file names. The
-variables are placed in a module for the given processor.
-
-Which processor modules are built is controlled via feature flags. Specify the processor name in the
-feature flag to build the processor configuration files.
-
 ## Processors
 
 The following are the list of processor configurations available in Ghidra.
