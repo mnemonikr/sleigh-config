@@ -8,8 +8,7 @@ sourced from Ghidra version **11.4**.
 The configuration file contents are placed in variables based on their respective file names. The
 variables are placed in a module for the given processor.
 
-Which
-processor modules are built is controlled via feature flags. Specify the processor name in the
+Which processor modules are built is controlled via feature flags. Specify the processor name in the
 feature flag to build the processor configuration files.
 
 ## Processors
@@ -81,10 +80,12 @@ sleigh-config = { version = "0.1", features = ["x86"] }
 Then use a crate that uses these configuration files to interact with Ghidra Sleigh:
 
 ```rust
-// Construct new sleigh instance
 let sleigh = libsla::GhidraSleigh::builder()
     .processor_spec(sleigh_config::processor_x86::PSPEC_X86_64)?
     .build(sleigh_config::processor_x86::SLA_X86_64)?;
+
+// Use Sleigh to e.g. disassemble instructions
+let disassembly = sleigh.disassemble_native(&instruction_loader, address)?
 ```
 
 # FAQ
