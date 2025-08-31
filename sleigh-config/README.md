@@ -1,11 +1,14 @@
 # Overview
 
-This crate contains precompiled Sleigh configuration files for use with
+This crate contains precompiled `.sla` and `.pspec` configuration files for use with
 [libsla](https://crates.io/crates/libsla) or other crates that interface with the
-[Ghidra](https://github.com/NationalSecurityAgency/ghidra) decompiler. The processor specification
-files are sourced from Ghidra version **11.4**.
+[Ghidra](https://github.com/NationalSecurityAgency/ghidra) decompiler. The configuration files are
+sourced from Ghidra version **11.4**.
 
-The configuration files are in modules based on the processor name, e.g. `processor_x86`. Which
+The configuration file contents are placed in variables based on their respective file names. The
+variables are placed in a module for the given processor.
+
+Which
 processor modules are built is controlled via feature flags. Specify the processor name in the
 feature flag to build the processor configuration files.
 
@@ -52,6 +55,20 @@ The following are the list of processor configurations available in Ghidra.
 * x86
 
 # Example
+
+## Processor x86
+
+The available configuration files for the x86 processor are
+
+```rust
+sleigh_config::processor_x86::SLA_X86;
+sleigh_config::processor_x86::SLA_X86_64;
+sleigh_config::processor_x86::PSPEC_X86;
+sleigh_config::processor_x86::PSPEC_X86_16;
+sleigh_config::processor_x86::PSPEC_X86_16_REAL;
+sleigh_config::processor_x86::PSPEC_X86_64;
+sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
+```
 
 ## Cargo.toml
 
