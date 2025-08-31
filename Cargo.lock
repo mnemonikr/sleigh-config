@@ -160,13 +160,22 @@ dependencies = [
 
 [[package]]
 name = "libsla"
-version = "0.3.1"
+version = "0.4.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "92ad2491b29945edc3787ce948138118d01def902ef6c9131da4b65edccf86d6"
+checksum = "104864462a97a22bd685c4412b42c2f23a0b6ceeb01c705da0456c593851944e"
+dependencies = [
+ "libsla-sys",
+ "thiserror",
+]
+
+[[package]]
+name = "libsla-sys"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bcae694c9226263f4c5882250570a1326788e841f4845782fad41aacaf7493e2"
 dependencies = [
  "cxx",
  "cxx-build",
- "thiserror",
 ]
 
 [[package]]

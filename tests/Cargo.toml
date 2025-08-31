@@ -9,7 +9,7 @@ publish = false
 sleigh-config = { path = "../sleigh-config", features = ["x86"] }
 
 [dev-dependencies]
-libsla = "0.3"
+libsla = { version = "0.4.1" }
 
 [[test]]
 name = "integration-test"
