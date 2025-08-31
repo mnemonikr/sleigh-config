@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 license = "Apache-2.0"
 repository = "https://github.com/mnemonikr/sleigh-config"
+description = "Precompiled .sla files and other processor configuration files needed to interface with Ghidra Sleigh"
 categories = ["security", "config", "caching"]
 include = [
     "/build.rs",
