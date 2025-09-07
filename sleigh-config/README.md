@@ -87,3 +87,7 @@ let disassembly = sleigh.disassemble_native(&instruction_loader, address)?
 ## Why are the SLA configuration files not XML?
 
 In Ghidra 11.1 the SLA configuration file format was changed to a binary format.
+
+## Is there a way to discover configurations programmatically?
+
+Yes. The global `SLA_DATA` and `PSPEC_DATA` arrays can be used to iterate over all configurations.
