@@ -1,8 +1,8 @@
 # Overview
 
 This crate contains precompiled `.sla` and `.pspec` configuration files for use with
-[libsla](https://crates.io/crates/libsla) or other crates that interface with the
-[Ghidra](https://github.com/NationalSecurityAgency/ghidra) decompiler. The configuration files are
+[libsla](https://crates.io/crates/libsla) or other crates that interface with 
+[Ghidra](https://github.com/NationalSecurityAgency/ghidra) SLEIGH. The configuration files are
 sourced from Ghidra version **11.4**.
 
 ## Processors
@@ -68,7 +68,7 @@ sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
 Specify the processor(s) you wish to use via feature flags.
 
 ```toml
-sleigh-config = { version = "0.1", features = ["x86"] }
+sleigh-config = { version = "1", features = ["x86"] }
 ```
 
 Then use a crate that uses these configuration files to interact with Ghidra Sleigh:
