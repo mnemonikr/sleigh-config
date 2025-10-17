@@ -159,14 +159,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "integration-tests"
-version = "0.0.0"
-dependencies = [
- "libsla",
- "sleigh-config",
-]
-
-[[package]]
 name = "libsla"
 version = "0.4.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -278,7 +270,9 @@ name = "sleigh-config"
 version = "1.0.0"
 dependencies = [
  "heck",
+ "libsla",
  "sleigh-compiler",
+ "sleigh-config",
 ]
 
 [[package]]
