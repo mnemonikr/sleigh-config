@@ -13,7 +13,7 @@ Specify the processor(s) you wish to use via feature flags.
 sleigh-config = { version = "1", features = ["x86"] }
 ```
 
-Then use a crate that uses these configuration files to interact with Ghidra SLEIGH:
+Then use a crate such as [libsla](https://crates.io/crates/libsla) that uses these configuration files to interact with Ghidra SLEIGH:
 
 ```rust
 let sleigh = libsla::GhidraSleigh::builder()
