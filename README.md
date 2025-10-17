@@ -5,6 +5,34 @@ This crate contains precompiled `.sla` and `.pspec` configuration files for use 
 [Ghidra](https://github.com/NationalSecurityAgency/ghidra) SLEIGH. The configuration files are
 sourced from Ghidra version **11.4**.
 
+## Example
+
+Specify the processor(s) you wish to use via feature flags.
+
+```toml
+sleigh-config = { version = "1", features = ["x86"] }
+```
+
+Then use a crate such as [libsla](https://crates.io/crates/libsla) that uses these configuration files to interface with Ghidra SLEIGH:
+
+```rust
+let sleigh = libsla::GhidraSleigh::builder()
+    .processor_spec(sleigh_config::processor_x86::PSPEC_X86_64)?
+    .build(sleigh_config::processor_x86::SLA_X86_64)?;
+```
+
+The configurations available for the x86 processor are:
+
+```rust
+sleigh_config::processor_x86::SLA_X86;
+sleigh_config::processor_x86::SLA_X86_64;
+sleigh_config::processor_x86::PSPEC_X86;
+sleigh_config::processor_x86::PSPEC_X86_16;
+sleigh_config::processor_x86::PSPEC_X86_16_REAL;
+sleigh_config::processor_x86::PSPEC_X86_64;
+sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
+```
+
 ## Processors
 
 The following are the list of processor configurations available in Ghidra.
@@ -46,41 +74,6 @@ The following are the list of processor configurations available in Ghidra.
 * eBPF
 * tricore
 * x86
-
-# Example
-
-## Processor x86
-
-The available configuration files for the x86 processor are
-
-```rust
-sleigh_config::processor_x86::SLA_X86;
-sleigh_config::processor_x86::SLA_X86_64;
-sleigh_config::processor_x86::PSPEC_X86;
-sleigh_config::processor_x86::PSPEC_X86_16;
-sleigh_config::processor_x86::PSPEC_X86_16_REAL;
-sleigh_config::processor_x86::PSPEC_X86_64;
-sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
-```
-
-## Cargo.toml
-
-Specify the processor(s) you wish to use via feature flags.
-
-```toml
-sleigh-config = { version = "1", features = ["x86"] }
-```
-
-Then use a crate that uses these configuration files to interact with Ghidra SLEIGH:
-
-```rust
-let sleigh = libsla::GhidraSleigh::builder()
-    .processor_spec(sleigh_config::processor_x86::PSPEC_X86_64)?
-    .build(sleigh_config::processor_x86::SLA_X86_64)?;
-
-// Use sleigh to e.g. disassemble instructions
-let disassembly = sleigh.disassemble_native(&instruction_loader, address)?
-```
 
 # FAQ
 
