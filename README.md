@@ -33,7 +33,7 @@ sleigh_config::processor_x86::PSPEC_X86_64;
 sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
 ```
 
-## Supported Processors
+## Processors
 
 The following are the list of processor configurations available in Ghidra.
 
