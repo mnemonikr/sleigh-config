@@ -21,7 +21,7 @@ let sleigh = libsla::GhidraSleigh::builder()
     .build(sleigh_config::processor_x86::SLA_X86_64)?;
 ```
 
-The available configuration files for the x86 processor are
+The configurations available for the x86 processor are
 
 ```rust
 sleigh_config::processor_x86::SLA_X86;
