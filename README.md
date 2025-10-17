@@ -21,7 +21,19 @@ let sleigh = libsla::GhidraSleigh::builder()
     .build(sleigh_config::processor_x86::SLA_X86_64)?;
 ```
 
-## Processors
+The available configuration files for the x86 processor are
+
+```rust
+sleigh_config::processor_x86::SLA_X86;
+sleigh_config::processor_x86::SLA_X86_64;
+sleigh_config::processor_x86::PSPEC_X86;
+sleigh_config::processor_x86::PSPEC_X86_16;
+sleigh_config::processor_x86::PSPEC_X86_16_REAL;
+sleigh_config::processor_x86::PSPEC_X86_64;
+sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
+```
+
+## Supported Processors
 
 The following are the list of processor configurations available in Ghidra.
 
@@ -62,22 +74,6 @@ The following are the list of processor configurations available in Ghidra.
 * eBPF
 * tricore
 * x86
-
-# Example
-
-## Processor x86
-
-The available configuration files for the x86 processor are
-
-```rust
-sleigh_config::processor_x86::SLA_X86;
-sleigh_config::processor_x86::SLA_X86_64;
-sleigh_config::processor_x86::PSPEC_X86;
-sleigh_config::processor_x86::PSPEC_X86_16;
-sleigh_config::processor_x86::PSPEC_X86_16_REAL;
-sleigh_config::processor_x86::PSPEC_X86_64;
-sleigh_config::processor_x86::PSPEC_X86_64_COMPAT32;
-```
 
 # FAQ
 
